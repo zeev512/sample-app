@@ -1,10 +1,26 @@
-import { Component } from '@angular/core';
+import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+	selector: 'app-root',
+	template: `
+		<ng-template>
+			<button class="tab-button" (click)="login()">{{loginText}}</button>
+			<button class="tab-button" (click)="signUp()">{{signUpText}}</button>
+		</ng-template>
+	`
 })
 export class AppComponent {
-  title = 'ng-template';
+
+	loginText = 'Login';
+	signUpText = 'Sign Up';
+	lessons = ['Lesson 1', 'Lessons 2'];
+
+	login() {
+		console.log('Login');
+	}
+
+	signUp() {
+		console.log('Sign Up');
+	}
+
 }
