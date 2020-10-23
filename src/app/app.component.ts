@@ -1,19 +1,18 @@
 import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
+
 /*
-If we try to use two structural directives applied to the same template elements
-(the div in our case) we will fail.
-So as a workaround we add extra div element.
- */
+This is a real solution by which we use ng-container, the Angular built-in element directive
+*/
 @Component({
 	selector: 'app-root',
 	template: `
-		<div *ngIf="lessons">
+		<ng-container *ngIf="lessons">
 			<div class="lesson" *ngFor="let lesson of lessons">
 				<div class="lesson-detail">
 					{{lesson | json}}
 				</div>
 			</div>
-		</div>
+		</ng-container>
 	`})
 export class AppComponent {
 
