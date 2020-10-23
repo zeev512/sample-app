@@ -1,8 +1,16 @@
 import {Component, OnInit, TemplateRef, ViewChild} from '@angular/core';
 
 /*
-This is a real solution by which we use ng-container, the Angular built-in element directive
-*/
+Possible solution would be to replace the outer div element
+with the ng-container element directive.
+
+As we can see, the ng-container directive provides us with an element
+that we can attach a structural directive to.
+This way we don't have to create an extra element just for that.
+But the major use case for the ng-container directive is that it can
+also provide a placeholder for injecting a template dynamically into the
+page.
+ */
 @Component({
 	selector: 'app-root',
 	template: `
@@ -12,8 +20,7 @@ This is a real solution by which we use ng-container, the Angular built-in eleme
 					{{lesson | json}}
 				</div>
 			</div>
-		</ng-container>
-	`})
+		</ng-container>	`})
 export class AppComponent {
 
 	loginText = 'Login';
